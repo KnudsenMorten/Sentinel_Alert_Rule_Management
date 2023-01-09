@@ -4,6 +4,7 @@
     
     Microsoft Sentinel Alert Rule Management
     Automation of Sentinel Alert Rules & Alert Actions
+    Please see blog-post for detailed walkthrough of the script https://mortenknudsen.net/?p=525
 
     .MORE INFORMATION
     https://learn.microsoft.com/en-us/rest/api/securityinsights/preview/data-connectors/list?tabs=HTTP
