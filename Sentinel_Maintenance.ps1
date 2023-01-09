@@ -177,12 +177,17 @@
     ForEach ($Rule in $RulesWithRequiredConnectors)
         {
             $Connectors = $Rule.properties.RequiredDataConnectors.ConnectorId
+            $ConnectorsCount = $Connectors.count
+
             If ($Connectors)
                 {
                     $Exclude = $false
                     ForEach ($Connector in $Connectors)
                         {
-                            If ( ($Connector -in $global:Sentinel_DataConnectors_ExcludeAlertRules) -and ($Exclude -eq $false) )
+                            # Only exclude alert rules with explicit requirement for a single data connector, which is excluded
+                            # This will enable alert rules, which includes many data connectors, where soe of them are excluded
+                            # this way the alert rule will be enabled for the remaining connectors inside the rule.
+                            If ( ( $ConnectorsCount -eq 1) -and ($Connector -in $global:Sentinel_DataConnectors_ExcludeAlertRules) -and ($Exclude -eq $false) )
                                 {
                                     $Exclude = $true
                                     $ExcludedAlertRulesFromTemplates += $Rule
