@@ -3,7 +3,7 @@
     .SYNOPSIS
     
     Microsoft Sentinel Alert Rule Management
-    Automation of Sentinel Alert Rules & Alert Actions
+    Sentinel Alert Rules Management with Add / Update / Remove & Alert Rule Action automation
     Please see blog-post for detailed walkthrough of the script https://mortenknudsen.net/?p=525
 
     .MORE INFORMATION
