@@ -72,8 +72,8 @@
                                                                         )
 
     # Sentinel Alert Management
-    $global:Sentinel_DeleteExcludedAlertRulesFromTemplateIfFound    = $true
-    $global:Sentinel_DeleteDupletAlertsRulesIfFound                 = $true
+    $global:Sentinel_DeleteExcludedAlertRulesFromTemplateIfFound    = $false
+    $global:Sentinel_DeleteDupletAlertsRulesIfFound                 = $false
     $global:Sentinel_CreateUpdateAlertRulesWithNoDataConnectorReq   = $true
 
     # Sentinel Alert Rule Action (default)
