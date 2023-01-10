@@ -533,12 +533,12 @@ Else
 # ACTION - Set action on NEW and UPDATED alert rules (if defined in parameter)
 #################################################################################
 
-    # Get logic app info
-    $LogicAppResourceId = Get-AzLogicApp -ResourceGroupName $global:SentinelAlertingLogicAppActionRG  -Name $global:SentinelAlertingLogicAppActionName
-    $LogicAppTriggerUri = Get-AzLogicAppTriggerCallbackUrl -ResourceGroupName $global:SentinelAlertingLogicAppActionRG  -Name $global:SentinelAlertingLogicAppActionName -TriggerName $global:SentinelAlertingLogicAppActionTriggerName
-
     If ( ($global:SentinelAlertingForceSetExistingRules) -and ($global:SentinelAlertingEnableLogicAppAction) -and ($global:SentinelAlertingLogicAppActionName) -and ($global:SentinelAlertingLogicAppActionRG) )
         {
+            # Get logic app info
+            $LogicAppResourceId = Get-AzLogicApp -ResourceGroupName $global:SentinelAlertingLogicAppActionRG  -Name $global:SentinelAlertingLogicAppActionName
+            $LogicAppTriggerUri = Get-AzLogicAppTriggerCallbackUrl -ResourceGroupName $global:SentinelAlertingLogicAppActionRG  -Name $global:SentinelAlertingLogicAppActionName -TriggerName $global:SentinelAlertingLogicAppActionTriggerName
+
             # Get all existing Alert Rules
             $baseUri = "/subscriptions/$($global:MainLogAnalyticsWorkspaceSubId)/resourceGroups/$($global:MainLogAnalyticsWorkspaceResourceGroup)/providers/Microsoft.OperationalInsights/workspaces/$($global:MainLogAnalyticsWorkspaceName)"
             $connectedDataConnectorsUri = "$baseUri/providers/Microsoft.SecurityInsights/alertRules/?api-version=2022-12-01-preview"
