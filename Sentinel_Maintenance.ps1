@@ -86,7 +86,7 @@
     $global:SentinelAlertingLogicAppActionTriggerName               = "When_a_response_to_an_Azure_Sentinel_alert_is_triggered"
 
     # Sentinel Alert Rule management logging
-    $global:Sentinel_Issues_List                                    = "D:\SRIPTS\OUTPUT\SENTINEL_AlertRules_Issues_List.txt"
+    $global:Sentinel_Issues_List                                    = "D:\SCRIPTS\OUTPUT\SENTINEL_AlertRules_Issues_List.txt"
     $global:Sentinel_Issues_Detailed                                = "D:\SCRIPTS\OUTPUT\SENTINEL_AlertRules_Issues_Detailed.txt"
 
 
